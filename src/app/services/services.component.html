@@ -1,0 +1,285 @@
+<main id="main">
+
+
+  <!-- Use the Font Awesome icon class -->
+  <!--<a href="https:/wa.me/919112100663" target="_blank" class="whatsapp_float"><i
+      class="fa-brands fa-whatsapp whatsapp-icon"></i></a>-->
+
+  <!-- ======= Career Section ======= -->
+
+  <section class="services-main-section section-spacing" id="section_2">
+    <div class="container-standard">
+      <div class="col-text-center">
+        <h2 class="heading-section">SERVICES</h2>
+      </div>
+    </div>
+
+    <div class="container-fluid-standard">
+      <div class="row-standard">
+        <ul class="nav-tabs-custom" role="tablist">
+          <li *ngFor="let tab of tabs" class="nav-item-custom" role="presentation">
+            <button class="nav-link-custom" [class.active]="activeTab === tab.id" (click)="setActiveTab(tab.id)"
+                    type="button" role="tab" [attr.aria-controls]="tab.id + '-tab-pane'" [attr.id]="tab.id + '-tab'">
+              {{ tab.name }}
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-standard" *ngIf="tabs.length > 0">
+      <div class="tab-content-custom" id="tabContent">
+        <div *ngFor="let tab of tabs" class="tab-pane-custom fade"
+             [ngClass]="{'show active': activeTab === tab.id}" [attr.id]="tab.id + '-tab-pane'"
+             [attr.aria-labelledby]="tab.id + '-tab'">
+          <ng-container *ngIf="tab.content && tab.content.length > 0">
+            <div class="flex-container">
+              <div *ngFor="let item of tab.content">
+                <div class="block-custom bg-white shadow-lg">
+                  <a *ngIf="item?.title && item?.description && item?.image" href="">
+                    <h5 class="heading-custom">{{ item.title }}</h5>
+                    <p class="description-custom">{{ item.description }}</p>
+                    <img [src]="item.image" class="image-custom image-fluid" [alt]="item.title"
+                         (error)="item.image = 'assets/img/default-placeholder.png'">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <p *ngIf="!tab.content || tab.content.length === 0">No services available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- what our costmor says -->
+  <!-- ======= Cta Section ======= -->
+  <section id="cta" class="cta">
+    <div class="container aos-init aos-animate" data-aos="zoom-in">
+      <div class="text-center">
+        <h3>Web Hosting and Management Services</h3>
+        <p> Streamline Your Online Presence with Reliable Hosting Solutions.
+          Transform your online presence with our Web Hosting and Management Services. We offer comprehensive solutions
+          designed to streamline your website's performance and ensure its security.
+
+        </p>
+        <a class="cta-btn" href="services.html">More Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing section-bg aos-init aos-animate" data-aos="fade-up">
+    <div class="container">
+
+      <div class="container">
+        <div class="section-title">
+          <h2 style="color: #04202f; margin-top: 0px;">Hosting-Services</h2>
+          <p class="sub-heading" style="color: #666;">
+            Web hosting services can vary significantly in terms of features, performance, pricing, and customer
+            support. Here are some key differences you might find among web hosting services
+          </p>
+        </div>
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-4 box">
+            <h3>Type of Hosting</h3>
+
+            <ul style="font-family: serif; font-size: medium;">
+              <li><i class="bx bx-check"></i> Shared Hosting</li>
+              <li><i class="bx bx-check"></i> VPS (Virtual Private Server) Hosting</li>
+              <li><i class="bx bx-check"></i> Dedicated Hosting</li>
+              <li><i class="bx bx-check"></i> Cloud Hosting</li>
+              <li><i class="bx bx-check"></i> WordPress Hosting</li>
+              <li><i class="bx bx-check"></i> Reseller Hosting</li>
+
+            </ul>
+
+            <h3>Hosting plans &amp; pricing</h3>
+
+            <ul style="font-family: serif; font-size: medium;">
+              <li><i class="bx bx-check"></i> Plan Options</li>
+              <li><i class="bx bx-check"></i> Features</li>
+              <li><i class="bx bx-check"></i> Resources</li>
+              <li><i class="bx bx-check"></i> Billing Cycle</li>
+              <li><i class="bx bx-check"></i> Money-Back Guarantee</li>
+              <li><i class="bx bx-check"></i> Add-Ons</li>
+              <li><i class="bx bx-check"></i> Terms and Conditions</li>
+            </ul>
+
+            <h3>performance</h3>
+
+            <ul style="font-family: serif; font-size: medium;">
+              <li><i class="bx bx-check"></i> Uptime Guarantee</li>
+              <li><i class="bx bx-check"></i> Server Speed</li>
+              <li><i class="bx bx-check"></i> Scalability</li>
+              <li><i class="bx bx-check"></i> Monitoring and Optimization</li>
+
+            </ul>
+          </div>
+
+          <div class="col-lg-4 box featured">
+            <h3>customer support</h3>
+
+            <ul style="font-family: serif; font-size: medium;">
+              <li><i class="bx bx-check"></i> 24/7 Availability</li>
+              <li><i class="bx bx-check"></i> Technical Expertise</li>
+              <li><i class="bx bx-check"></i> Fast Response Times</li>
+              <li><i class="bx bx-check"></i> Multiple Support Channels</li>
+              <li><i class="bx bx-check"></i> Fast Response Times</li>
+              <li><i class="bx bx-check"></i> Proactive Communication</li>
+            </ul>
+
+            <h3>specialized features</h3>
+
+            <ul style="font-family: serif; font-size: medium;">
+              <li><i class="bx bx-check"></i> WordPress Optimization</li>
+              <li><i class="bx bx-check"></i> E-commerce Hosting</li>
+              <li><i class="bx bx-check"></i> Developer Tools</li>
+              <li><i class="bx bx-check"></i> Reseller Hosting</li>
+              <li><i class="bx bx-check"></i> Managed Hosting</li>
+              <li><i class="bx bx-check"></i> Cloud Hosting with Auto-Scaling</li>
+              <li><i class="bx bx-check"></i> High-Performance Computing (HPC)</li>
+            </ul>
+
+            <h3>security</h3>
+
+            <ul style="font-family: serif; font-size: medium;">
+              <li><i class="bx bx-check"></i> Firewalls and DDoS Protection</li>
+              <li><i class="bx bx-check"></i> SSL Certificates</li>
+              <li><i class="bx bx-check"></i> Regular Security Updates</li>
+              <li><i class="bx bx-check"></i> Backup and Disaster Recovery</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 box">
+            <h3>Location </h3>
+
+            <ul style="font-family: serif; font-size: medium;">
+              <li><i class="bx bx-check"></i> Geographical Coverage</li>
+              <li><i class="bx bx-check"></i> Proximity to Target Audience</li>
+              <li><i class="bx bx-check"></i> Data Privacy Regulations</li>
+              <li><i class="bx bx-check"></i> Redundancy and Disaster Recovery</li>
+              <li><i class="bx bx-check"></i> Network Connectivity</li>
+              <li><i class="bx bx-check"></i> Security and Stability</li>
+            </ul>
+
+            <h3>control panel </h3>
+
+            <ul style="font-family: serif; font-size: medium;">
+              <li><i class="bx bx-check"></i> User-Friendly Interface</li>
+              <li><i class="bx bx-check"></i> Feature-Rich Functionality</li>
+              <li><i class="bx bx-check"></i> Customization Options</li>
+              <li><i class="bx bx-check"></i> Security Measures</li>
+              <li><i class="bx bx-check"></i> Scalability and Performance</li>
+              <li><i class="bx bx-check"></i> Support and Documentation</li>
+              <li><i class="bx bx-check"></i> Integration and Compatibility</li>
+
+            </ul>
+
+            <h3>
+              scalability</h3>
+
+            <ul style="font-family: serif; font-size: medium;">
+              <li><i class="bx bx-check"></i> Resource Allocation</li>
+              <li><i class="bx bx-check"></i> Auto-Scaling</li>
+              <li><i class="bx bx-check"></i> Load Balancing</li>
+              <li><i class="bx bx-check"></i> Elasticity</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+
+<footer id="custom-footer">
+
+  <div class="custom-footer-top">
+    <div class="custom-container">
+      <div class="custom-row">
+
+        <!-- Useful Links Section -->
+        <div class="custom-col-lg-3 custom-col-md-6 custom-footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="about.html">About us</a></li>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="services.html">Services</a></li>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="US.html">US Healthcare</a></li>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="Career.html">Career</a></li>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="services.html">Terms of Service</a></li>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="services.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Section -->
+        <div class="custom-col-lg-3 custom-col-md-6 custom-footer-services">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="services.html">Web Development</a></li>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="services.html">App Development</a></li>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="services.html">Outsourcing</a></li>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="services.html">UX Design</a></li>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="services.html">Product Management</a></li>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="services.html">Graphic Design</a></li>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="services.html">IoT Services</a></li>
+            <li><i class="custom-bx custom-bx-chevron-right"></i> <a href="services.html">Digital Marketing</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="custom-col-lg-3 custom-col-md-6 custom-footer-contact">
+          <h4>Contact Us</h4>
+          <p>
+            Office No. 4-B, Ganesham Commercial - A,<br>
+            Survey No. 21/18-21/24, BRTS Road,<br>
+            Pimple Saudagar, Pune- 411027<br><br>
+            <strong>Phone:</strong> +91 9112100663<br>
+            <strong>Email:</strong> hrdevconsoftware.com
+          </p>
+        </div>
+
+        <!-- About Section -->
+        <div class="custom-col-lg-3 custom-col-md-6 custom-footer-info">
+          <h4>About Devcons Software Solutions Pvt. Ltd.</h4>
+          <div>
+            <a href="index.html">
+              <img src="https://devconsoftware.com/assets/img/logo2_22_131457.png" alt="Devcons Logo"
+                class="custom-img-fluid" style="height: 60px; width: 60px;">
+            </a>
+          </div>
+          <p>Building Tomorrow's Technology, Today.</p>
+          <div class="social-links mt-3">
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-container">
+    <div class="custom-copyright">
+      © 2024 <strong><span>Devcons Software Solutions Pvt. Ltd.</span></strong> All Rights Reserved
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+<a href="#" class="top-up" (click)="scrollToTop()">
+  ↑ <!-- Replace this arrow with any text or simple icon -->
+</a>

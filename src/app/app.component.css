@@ -1,0 +1,62 @@
+/* General Navbar Styling */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9;/*1000*/
+  display: flex;
+  justify-content: space-between; /* Space between logo and links */
+  align-items: center; /* Center vertically */
+  background-color: #ffffff; /* White background */
+ /* padding: 10px 20px; /* Padding around the navbar */
+ padding: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  border-bottom: 1px solid #ddd; /* Border at the bottom */
+  font-family: 'Poppins', sans-serif;
+  background: transparent;
+}
+
+/* Logo Styling */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-brand .logo {
+  height: 70px; /* Adjust logo size */
+  width: auto;
+}
+
+/* Navigation Links Styling */
+.navbar a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333; /* Dark grey text color */
+  padding: 10px 20px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  color: #007bff; /* Blue color on hover */
+  background-color: rgba(0, 123, 255, 0.1); /* Light blue background */
+}
+
+.navbar a:focus {
+  outline: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack vertically on smaller screens */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .navbar a {
+    width: 100%; /* Make links take full width */
+    padding: 10px;
+    text-align: left; /* Align text to the left */
+  }
+}
